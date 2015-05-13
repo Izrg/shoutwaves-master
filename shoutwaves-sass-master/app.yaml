@@ -1,0 +1,68 @@
+application: shoutwaves1
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /bower_components
+  static_dir: bower_components
+
+- url: /js
+  static_dir: js
+
+- url: /img
+  static_dir: img
+
+- url: /wall
+  script: main.app
+  secure: always
+
+- url: /wall/.*
+  script: main.app
+  secure: always
+
+- url: /scss
+  static_dir: scss
+
+- url: /signup
+  script: authenticate.app
+  secure: always
+
+- url: /login
+  script: authenticate.app
+  secure: always
+
+- url: /forgot
+  script: authenticate.app
+  secure: always
+
+- url: /shout/(.*)/(.*)
+  script: main.app
+  secure: always
+
+- url: /shout
+  script: main.app
+  secure: always
+
+- url: /comment/(.*)
+  script: main.app
+  secure: always
+
+- url: /user/(.*)
+  script: main.app
+  secure: always
+
+- url: .*
+  script: authenticate.app
+
+
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

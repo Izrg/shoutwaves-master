@@ -1,0 +1,222 @@
+.row.full-width {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.one, .two {
+min-height:100vh
+}
+
+body {background: rgba(0,0,0,.2);}
+
+.fixed-div {
+    position: fixed;
+    width: auto;
+}
+
+body,html{
+    height:100%;
+    width:100%;
+    overflow-y: hidden;
+}
+
+
+.shout-dropdown {
+@extend .f-dropdown;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    max-width: 300px;
+}
+
+/*columns padding*/
+.no-pad-right {
+    padding-right: 0;
+}
+.no-pad-left{
+    padding-left: 0;
+}
+.no-pad{
+    padding: 0px;
+}
+
+
+/*SHOUT POST CSS*/
+/*reveal model for shout activity*/
+.reveal-modal{
+    padding-bottom: 0px;
+}
+
+.reveal-model-div{
+    overflow-y: auto;
+}
+
+.post-main-panel{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    background-color: #ffffff;
+}
+
+/*thumbnail*/
+.th{
+    border-width: 0px;
+}
+
+
+
+.landscape {
+    float:left;
+    width:50px;
+    height:50px;
+    overflow:hidden;
+}
+
+.landscape  img{
+    width:auto;
+    height: 175px;
+}
+
+/*.portrait {*/
+    /*float:left;*/
+    /*width:50px;*/
+    /*height:50px;*/
+    /*overflow:hidden;*/
+/*}*/
+
+.portrait-small {
+    float:left;
+    width:30px;
+    height:30px;
+    overflow:hidden;
+}
+
+.portrait img {
+    width:50px;
+    height: auto;
+}
+
+.portrait-small img{
+    width:30px;
+    height: auto;
+}
+
+
+.user_name  {
+    /*text-decoration: none;*/
+    font-weight:bold;
+    color:#000000;
+    font-size:14px;
+    text-align:left;
+    font-family: 'Roboto', sans-serif;
+}
+.user_name:hover{
+    color:#000000;
+    border-bottom: 1px solid #000000;
+}
+
+.post_date{
+    color:#999;
+    font-size: 12px;
+    text-align:left;
+    font-family: 'Roboto', sans-serif;
+}
+.no-bullet{
+    line-height: 1.2;
+    padding-top: 0.2rem;
+}
+
+/*.user-date {*/
+/*position: relative;*/
+/*padding-left: 0px;*/
+/*margin:0 0 5px 0;*/
+/*}*/
+
+/*comment area*/
+.comment{
+    background-color: #f5f5f5;
+}
+
+.show-comments-text{
+    color:#000000;
+    font-size: 12px;
+    text-align:left;
+}
+.show-comments-text:hover{
+    color:#1cc7ff;
+    border-bottom: 1px solid #1cc7ff;
+}
+
+.comment-container{
+    padding: 10px;
+    display:none
+}
+
+#post-content{
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.comment-th{
+    padding: 5px 0 0 8px;
+    /*position: absolute;*/
+}
+
+.comment-user{
+    font-weight:bold;
+    color:#000000;
+    font-size: 12px;
+    text-align:left;
+}
+.comment-user:hover{
+    color: #000000;
+    border-bottom: 1px solid #000000;
+}
+.comment-date{
+    color:#999;
+    font-size: 12px;
+    text-align:left;
+}
+
+.comment-content{
+    color:#404040;
+    line-height: 1px;
+    font-size: 13px;
+    text-align:left;
+}
+
+/*making comment*/
+.animated-comment-area {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+
+/*	start styles for the ContextMenu	*/
+.context_menu{
+	background-color:white;
+	border:1px solid gray;
+}
+.context_menu_item{
+	padding:3px 6px;
+}
+.context_menu_item:hover{
+	background-color:#CCCCCC;
+}
+.context_menu_separator{
+	background-color:gray;
+	height:1px;
+	margin:0;
+	padding:0;
+}
+
+/*	end styles for the ContextMenu	*/
+
+
+
+
+
+

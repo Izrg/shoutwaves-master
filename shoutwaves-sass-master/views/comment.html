@@ -1,0 +1,22 @@
+{% for comment in comments %}
+<div class="row collapse" data-comment-id="{{comment.key.id()}}">
+        <div class="small-2 columns" style=" padding-left: 0.5rem;"> <!--comment thumbnail-->
+            <a class="th" href="/img/profile_pic_28.jpg">
+                <img src="/img/profile_pic_28.jpg">
+            </a>
+        </div>
+        <div class="small-22 columns" style="padding-left: 0.4rem;">
+            <div class="row collapse" style="margin-top: -0.6rem; " > <!--comment info-->
+                <!--<div class="small-24 columns">-->
+                    <a class="comment-user" href="/img/profile_pic_28.jpg"  style="font-size:13px;">{{comment.user_name}}</a>
+                    <span class="comment-date" style="padding-left: 0.4rem; font-size:12px;">{{ comment.date.strftime('%Y-%m-%d')}}</span>
+                <!--</div>-->
+            </div>
+            <div class="row collapse" ><!--comment content-->
+                <!--<div class="small-24 columns">-->
+                    <p class="comment-content" style=" line-height: 140%; margin-top: -0.2rem; font-size:13px;" >{{comment.content}}</p>
+                <!--</div>-->
+            </div>
+        </div>
+</div>
+{% endfor %}

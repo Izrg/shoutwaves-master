@@ -1,0 +1,84 @@
+<!--Post container-->
+{% for User, Shout in user_shouts %}
+<div class="row" >
+    <div class="small-24 columns" style="padding-top: 10px; ">
+        <div class="panel post-main-panel " style="box-shadow: 0px 1px 6px 0px rgba(50, 50, 50, 0.75);">
+            <div class="inner-wrap">
+                <!--Top part-->
+                <div  class="row collapse" style="padding-left: 1rem;">
+                    <div class="small-4 medium-3 column">
+                        {% if Shout.isAnon %}
+                        <a class="th" href="/img/anonymous.png">
+                            <img src="/img/anonymous_46.png">
+                        </a>
+                        {% else %}
+                        <a class="th" href="/img/profile_pic_large.jpg">
+                            <img src="/img/profile_pic_46.jpg">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="small-20 medium-21 column">
+                        <ul class="no-bullet">
+                            {% if Shout.isAnon %}
+                            <li><a class="user_name">Anonymous</a></li>
+                            {% else %}
+                            <li><a class="user_name" href="/img/profile_pic_large.jpg">{{ User.name }}</a></li>
+                            {% endif %}
+                            {% if Shout.isPrivate %}
+                            <li><a class="post_date">Private - {{ Shout.date.strftime('%Y-%m-%d')  }}</a></li>
+                            {% else %}
+                            <li><a class="post_date">Public - {{ Shout.date.strftime('%Y-%m-%d')  }}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!--post content-->
+                <div  class="row" style="padding-top: 0.8rem;">
+                    <div class="small-24 column">
+                        <section class="main-section">
+                            <p style="font-family: 'Roboto', sans-serif;">{{ Shout.content }}
+                            </p>
+                        </section>
+                    </div>
+                </div>
+
+                <!--comment stuff-->
+
+                <div  id="comment_{{Shout.key.id()}}" class="row" style="border-top: 1px solid; border-color: #F5F5F5;">
+                    <!--expanding comments-->
+                    <div class="small-24 column" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                        {% if Shout.commentCount > 0 %}
+                        <a id="show_comment_{{Shout.key.id()}}" data-shout-key="{{Shout.key.id()}}" class="show-comments-text show_comment"  href="#">{{Shout.commentCount}} Comments <span id="expanderSign_comment_{{Shout.key.id()}}">+</span></a>
+                        {% endif %}
+                    </div>
+                    <!--comments area-->
+                    <div id="content_comment_{{Shout.key.id()}}" class="row shout-content-padding comment-container" >
+                    </div>
+
+
+                    <!--making comment-->
+                    <div class="row" >
+                        <div class="small-24 columns">
+                            <textarea rows=1 id="commentTextArea_{{Shout.key.id()}}" class="animated-comment-area" placeholder="Add a comment..." style="overflow: hidden; resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-8 medium-5 columns">
+                            <!--<a  href="/comment/{{Shout.key.id()}}" class="button tiny">Comment</a>-->
+                            <a id="commentButton" onclick="handlePostComment('{{Shout.key.id()}}')" class="button tiny">Comment</a>
+
+                        </div>
+                        <div class="small-16 medium-19 columns">
+                            <a href="#" class="button secondary tiny">Cancel</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endfor %}
